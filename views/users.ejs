@@ -1,0 +1,36 @@
+<div class="container">
+  <h1 class="text-primary">Users</h1>
+  <a class="link-light link-underline-opacity-0" href="/add"><button type="button" class="btn btn-success my-2">Add user</button></a>
+  <p>Choose an user to see details</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Email</th>
+        <th scope="col">Status</th>
+        <th scope="col">Control</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+            <td><%= user.id %></td>
+            <td>
+                <a class="link-dark link-offset-2 link-underline link-underline-opacity-0" href="<%= user.id %>"/>
+                    <%= user.name %> 
+                </a>
+            </td>
+            <td><%= user.gender %></td>
+            <td><%= user.email %></td>
+            <td><%= user.status %></td>
+            <td>
+                <a href="" class="edit">Chỉnh sửa</a> | 
+                <a href="#" class="delete" data-item="">Xóa</a>
+            </td>
+        </tr>
+    <% }); %>
+    </tbody>
+  </table>
+</div>
