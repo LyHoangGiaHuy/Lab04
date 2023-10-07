@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 class="text-primary">Danh sách sản phẩm</h1>
+  <% if (messages.success) { %>
+    <div class="alert alert-success"><div class="alert alert-success"><%= messages.success %></div></div>
+  <% } %>
+  <% if (messages.error) { %>
+    <div class="alert alert-success"><div class="alert alert-success"><%= messages.error %></div></div>
+  <% } %>
+  <a class="link-light link-underline-opacity-0" href="/add"><button type="button" class="btn btn-success my-2">Thêm sản phẩm</button></a>
+  <p>Chọn một sản phẩm cụ thể để xem chi tiết</p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Tên sản phẩm</th>
+        <th scope="col">Giá</th>
+        <th scope="col">Thao tác</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => {
+        <tr>
+        <th scope="row"><%= user.id >% </th>
+        <td><a class="link-dark link-offset-2 link-underline link-underline-opacity-0" href="<%= user.id%>"/><%= user.name>%</a></td>
+        <td></td>
+        <td>
+          <a href="" class="edit">Chỉnh sửa</a> | 
+          <a href="#" class="delete" data-item="">Xóa</a>
+        </td>
+        </tr>
+      });
+      %>
+    </tbody>
+  </table>
+</div>
